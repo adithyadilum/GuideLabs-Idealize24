@@ -1,7 +1,7 @@
 // src/ScrollEffect.js
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
-import './style.css';
+import './ScrollEffect.css';
 
 const ScrollEffect = ({ children }) => {
     const { ref, inView } = useInView({
@@ -10,7 +10,7 @@ const ScrollEffect = ({ children }) => {
     });
 
     return (
-        <div ref={ref} className={`fade-in-section ${inView ? 'is-visible' : ''}`}>
+        <div ref={ref} className={`fade-in-section ${inView ? 'is-visible' : ''}`} >
             {children}
         </div>
     );

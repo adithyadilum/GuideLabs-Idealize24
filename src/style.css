@@ -198,12 +198,12 @@ h1 {
     overflow: hidden;
 }
 
-.section4 div div {
+.section4 div .section4Container {
     width: 100%;
     height: 400px;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
     justify-content: center;
     gap: 20px;
     padding: 60px;
@@ -212,10 +212,10 @@ h1 {
     overflow: hidden;
 }
 
-.section4 div div h2 {
+.section4 div .section4Container h2 {
     font-family: 'gloock', sans-serif;
-    width: 100%;
-    font-size: 12vw;
+    width: fit-contet;
+    font-size: 10vw;
     font-weight: 100;
     letter-spacing: normal;
     line-height: 1.2em;
@@ -228,13 +228,13 @@ h1 {
     height: 43px;
 }
 
-.section4 div div p {
+.section4 div .section4Container p {
     width: 100%;
     color: #000;
     font-size: 20px;
     letter-spacing: -0.025em;
     line-height: 1.4em;
-    text-align: start;
+    text-align: center;
 }
 
 .section5 {
@@ -261,7 +261,7 @@ h1 {
 
 }
 
-.section5 div div {
+.section5 div .section5Container {
     width: 100%;
     height: auto;
     min-height: 400px;
@@ -275,14 +275,14 @@ h1 {
     background-color: #f2f2f2;
 }
 
-.section5 div div img {
+.section5 div .section5Container img {
     width: 80px;
     height: 80px;
     position: absolute;
     transform: translateY(-15em);
 }
 
-.section5 div div p {
+.section5 div .section5Container p {
     width: 100%;
     color: #000;
     font-size: 20px;
@@ -291,7 +291,7 @@ h1 {
     text-align: center;
 }
 
-.section5 div div p:last-child {
+.section5 div .section5Container p:last-child {
     font-size: 16px;
     letter-spacing: 0;
     line-height: 1.5em;
@@ -320,7 +320,7 @@ h1 {
     overflow: visible;
 }
 
-.section6 div div {
+.section6 .card {
     width: 100%;
     height: auto;
     display: flex;
@@ -375,12 +375,12 @@ h1 {
     transform: translateX(16em) translateY(-12em);
 }
 
-.section6 div div div {
+.section6 .cardContent {
     width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     justify-content: start;
     gap: 10px;
     padding: 20px 0px;
@@ -433,7 +433,7 @@ h1 {
     color: #052f5f;
 }
 
-.section7 div {
+.section7 .section7Container {
     width: 100%;
     max-width: 1000px;
     display: flex;
@@ -445,7 +445,7 @@ h1 {
     overflow: hidden;
 }
 
-.section7 div div {
+.section7 .section7Container div {
     width: 100%;
     height: auto;
     display: flex;
@@ -455,7 +455,7 @@ h1 {
     gap: 10px;
 }
 
-.section7 div div h2 {
+.section7 .section7Container div h2 {
     font-family: 'Mulish', sans-serif;
     font-size: 20px;
     letter-spacing: -0.025em;
@@ -465,7 +465,7 @@ h1 {
     font-weight: normal;
 }
 
-.section7 div div p {
+.section7 .section7Container div p {
     width: 100%;
     max-width: 400px;
     font-size: 16px;
@@ -486,7 +486,7 @@ footer {
     border-top: solid 1px #000;
 }
 
-footer div {
+footer .footerContainer {
     width: 100%;
     max-width: 1000px;
     display: flex;
@@ -515,7 +515,7 @@ footer:last-child {
     text-align: center;
 }
 
-footer div div {
+footer .footerContainer div {
     width: 300px;
     height: auto;
     display: flex;
@@ -526,14 +526,14 @@ footer div div {
     padding: 0%;
 }
 
-footer div div p {
+footer .footerContainer div p {
     font-size: 16px;
     color: #000;
     letter-spacing: -0.025em;
     line-height: 1.5em;
 }
 
-footer div div div {
+footer .footerContainer div div {
     width: auto;
     height: auto;
     display: flex;
@@ -544,21 +544,10 @@ footer div div div {
     padding: 0px;
 }
 
-footer div div div a {
+footer .footerContainer div div a {
     font-size: 16px;
     color: #052f5f;
     letter-spacing: 0;
     line-height: 1.5em;
     text-decoration: none;
-}
-
-.fade-in-section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.fade-in-section.is-visible {
-    opacity: 1;
-    transform: none;
 }

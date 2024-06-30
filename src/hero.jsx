@@ -83,12 +83,12 @@ function hero() {
             <section className="section4">
                 <div>
                     <ScrollEffect>
-                        <div>
+                        <div className='section4Container'>
                             <h2>1000</h2>
                         </div>
                     </ScrollEffect>
                     <ScrollEffect>
-                        <div>
+                        <div className='section4Container '>
                             <img src="https://img.icons8.com/?size=100&id=109686&format=png&color=000000" alt="" />
                             <p>Our platform has already advised 1000+ students on their post-O-level journey!</p>
                         </div>
@@ -109,14 +109,14 @@ function hero() {
             <section className="section5">
                 <div>
                     <ScrollEffect>
-                        <div>
+                        <div className='section5Container'>
                             <img src="https://img.icons8.com/?size=100&id=1z2QHLAUDqtl&format=png&color=000000" alt="" />
                             <p>"We’ll be using GuideLabs exclusively in our counseling sessions. It’s a comprehensive platform for students.”</p>
                             <p>EduVista</p>
                         </div>
                     </ScrollEffect>
                     <ScrollEffect>
-                        <div>
+                        <div className='section5Container'>
                             <img src="https://img.icons8.com/?size=100&id=12208&format=png&color=000000" alt="" />
                             <p>"It’s about time someone leveled up the career guidance game! GuideLabs has my full endorsement.”</p>
                             <p>CareerSfera</p>
@@ -128,11 +128,11 @@ function hero() {
             <section className="section6">
                 <div>
                     <ScrollEffect>
-                        <div>
+                        <div className='card'>
                             <img src="https://img.icons8.com/?size=100&id=Og4wEFAlRsa3&format=png&color=000000" alt="" />
                             <p>Free</p>
                             <h3>0LKR</h3>
-                            <div>
+                            <div className='cardContent'>
                                 <div>
                                     <span class="material-symbols-rounded">check</span>
                                     <p>Profile Creation</p>
@@ -156,11 +156,11 @@ function hero() {
                         </div>
                     </ScrollEffect>
                     <ScrollEffect>
-                        <div>
+                        <div className='card'>
                             <img src="https://img.icons8.com/?size=100&id=47071&format=png&color=000000" alt="" />
                             <p>Pro</p>
                             <h3>499LKR</h3>
-                            <div>
+                            <div className='cardContent'>
                                 <div>
                                     <span class="material-symbols-rounded">check</span>
                                     <p>Advanced Insights</p>
@@ -184,11 +184,11 @@ function hero() {
                         </div>
                     </ScrollEffect>
                     <ScrollEffect>
-                        <div>
+                        <div className='card'>
                             <img src="https://img.icons8.com/?size=100&id=hcZ65S78dSp6&format=png&color=000000" alt="" />
                             <p>Elite</p>
                             <h3>999LKR</h3>
-                            <div>
+                            <div className='cardContent'>
                                 <div>
                                     <span class="material-symbols-rounded">check</span>
                                     <p>Complete Access</p>
@@ -219,7 +219,7 @@ function hero() {
                     <h2>Enlighten me...</h2>
                 </ScrollEffect>
                 <ScrollEffect>
-                    <div>
+                    <div className='section7Container'>
                         <div>
                             <h2>What is GuideLabs</h2>
                             <p>GuideLabs is a one-stop solution for students who have just completed their O levels. We analyse your academic performance and provide you with tailored advice that enables you to choose the best subject streams for your A levels. Along your journey, we provide ample resources for exploring career paths within each subject stream, making connections with industry professionals, and providing guidance every step of the way.</p>
@@ -238,7 +238,7 @@ function hero() {
 
             <footer>
                 <ScrollEffect>
-                    <div>
+                    <div className='footerContainer'>
                         <div>
                             <p>Learn</p>
                             <div>
@@ -266,7 +266,7 @@ function hero() {
                     </div>
                 </ScrollEffect>
                 <ScrollEffect>
-                    <div>
+                    <div className='footerContainer'>
                         <div>
                             <img src="" alt="" />
                             <img src="" alt="" />
