@@ -1,12 +1,15 @@
 
 import React from 'react';
-import Hero from './hero.jsx';
+import Hero from './Hero.jsx';
 import Question from './Question.jsx';
 
 function App() {
     return (
-        <Question />
-    );
+        <div>
+            <Hero />
+            <Question />
+        </div>
+    )
 }
 
 export default App;

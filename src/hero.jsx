@@ -1,5 +1,5 @@
 import React from 'react';
-import './style.css';
+import './Hero.css';
 import ScrollEffect from './ScrollEffect';
 
 function hero() {
@@ -125,7 +125,7 @@ function hero() {
                 </div>
             </section>
 
-            <section className="section6">
+            <section className='section6'>
                 <div>
                     <ScrollEffect>
                         <div className='card'>
