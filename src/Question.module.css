@@ -12,35 +12,34 @@ body {
 }
 
 .wrapper {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(-45deg, #270d3e, #543d85, #543d85, #270d3e);
+  background: #FFE6E6;
   background-size: 400% 400%;
   animation: gradient 25s ease infinite;
   height: 100vh;
 }
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
+.wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('./assets/bg.svg') no-repeat center center;
+  background-size: cover;
+  pointer-events: none;
 }
 
 .container1 {
   max-width: 600px;
   margin: 20px;
-  background-color: #e6e5f7;
+  background-color: #f7e5f3;
   border-radius: 25px;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -50,7 +49,7 @@ body {
 
 
 .qCardh2 {
-  color: #2d0f4a;
+  color: #451952;
   text-align: center;
   margin-top: 57.92px;
   font-size: xx-large;
@@ -62,7 +61,7 @@ body {
   margin-top: 23.72px;
   padding-top: 24px;
   text-align: center;
-  color: black;
+  color: #662549;
   font-size: large;
   font-weight: 600;
 }
@@ -78,9 +77,9 @@ body {
 
 
 .svgImg {
-  width: 624px;
-  height: 573px;
-  position: fixed;
+  width: 700px;
+  height: 700px;
+  position: absolute;
   bottom: 0;
   left: 0;
 }
@@ -90,10 +89,10 @@ body {
 }
 
 .btnAnswer {
-  background-color: #ffdc6b;
+  background-color: #f7e5f3;
   color: #2d0f4a;
-  border-radius: 8px;
-  border: 1px solid #ffdc6b;
+  border-radius: 15px;
+  border: 1px solid #2d0f4a;
   font-size: large;
   padding: 5px 20px;
   margin-bottom: 20px;
@@ -101,23 +100,23 @@ body {
 
 .btnAnswer:hover {
   color: var(--bs-btn-hover-color);
-  background-color: #ffdc6b;
-  border-color: var(--bs-btn-hover-border-color);
+  background-color: #AE445A;
+  border-color: #AE445A;
 }
 
 .btnSubmit {
-  background-color: #2d0f4a;
+  background-color: #451952;
   color: #dad7f7;
-  border-radius: 8px;
+  border-radius: 15px;
   font-size: large;
-  padding: 5px 20px;
+  padding: 5px 30px;
   margin-bottom: 20px;
   border: 1px solid transparent;
 }
 
 
 .btnSubmit:hover {
-  color: #2d0f4a;
+  color: #451952;
   background-color: #dad7f7;
-  border: 1px solid #2d0f4a;
+  border: 1px solid #451952;
 }

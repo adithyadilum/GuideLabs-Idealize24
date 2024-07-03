@@ -15,7 +15,7 @@ function Question() {
                 </div>
                 <button type="submit" className={`${styles.btn} ${styles.btnSubmit}`}>Next </button>
             </div>
-            <img src='src\assets\girl on graduation-cuate.svg' alt="girl" className={styles.svgImg}></img>
+
         </div>
     );
 }

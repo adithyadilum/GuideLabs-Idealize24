@@ -1,20 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Gloock&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 
+:root {
+    --primary-color: #451952;
+    --secondary-color: #662549;
+    --tertiary-color: #f7e5ea;
+    --yellow-color: #F39F5A;
+
+    --display-font: 'Gloock', sans-serif;
+    --text-font: 'Mulish', sans-serif;
+
+}
 
 * {
     margin: 0;
 }
 
 body {
-    font-family: 'Mulish', sans-serif;
+    font-family: var(--display-font);
     font-style: normal;
 }
 
-.container,
 .hero,
+.container,
 .section1,
 .section2 {
+    position: relative;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -23,23 +34,28 @@ body {
 }
 
 .hero {
-    position: relative;
+    flex-direction: row;
     height: 100vh;
-    background-color: rgb(46, 46, 46);
+    background: url('../src/assets/Sea\ of\ Clouds.svg') no-repeat center center/cover;
 }
 
-.hero div,
-.hero h1,
-.hero .description,
-.btnGetStarted,
-.btnLearnMore {
-    text-align: center;
-    margin: 8px;
+.heroWrapper {
+    width: 100%;
+    max-width: 1500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
-h1,
+.title {
+    gap: 40px;
+}
+
+
 .section1 h2 {
-    font-family: 'Gloock', sans-serif;
+    font-family: var(--display-font);
     font-size: 50px;
     font-weight: 100;
     line-height: 1.2em;
@@ -47,29 +63,34 @@ h1,
 
 h1 {
     color: #fff;
+    font-family: var(--display-font);
+    font-size: 500%;
+    font-weight: 100;
+    letter-spacing: normal;
+    margin-bottom: 20px;
 }
 
 .section1 h2 {
     max-width: 600px;
-    color: #052f5f;
+    color: var(--primary-color);
 }
 
 .btnGetStarted,
 .btnLearnMore {
+    display: inline-block;
     border: none;
-    height: 40px;
-    padding: 15px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-family: 'Mulish';
+    padding: 15px 25px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-family: var(--text-font);
     font-weight: 700;
-    line-height: 1.2em;
+    cursor: pointer;
 }
 
 .btnGetStarted {
     background-color: white;
     color: #333;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 .btnLearnMore {
@@ -83,21 +104,24 @@ h1 {
     font-weight: 500;
     letter-spacing: -0.5px;
     line-height: 1.5em;
-    color: #fff;
+    color: var(--tertiary-color);
+}
+
+.hero .description {
+    margin: 30px 0px;
 }
 
 .section1 {
     padding: 48px 0px;
 }
 
-.section1 div,
-.hero div {
+.section1 div {
     width: 1000px;
 }
 
 .section1 p {
     font-size: 16px;
-    color: #000;
+    color: var(--secondary-color);
     margin-bottom: 40px;
 }
 
@@ -143,7 +167,8 @@ h1 {
 
 
 .section2 h3 {
-    font-family: 'gloock', sans-serif;
+    font-family: var(--display-font);
+    color: var(--primary-color);
     font-size: 32px;
     font-weight: 100;
     letter-spacing: normal;
@@ -157,7 +182,7 @@ h1 {
     font-weight: 500;
     letter-spacing: normal;
     line-height: 1.5em;
-    color: #000;
+    color: var(--secondary-color);
 }
 
 .section3 {
@@ -208,18 +233,18 @@ h1 {
     gap: 20px;
     padding: 60px;
     border-radius: 120px 120px 120px 0px;
-    background-color: #f2f2f2;
+    background-color: var(--tertiary-color);
     overflow: hidden;
 }
 
 .section4 div .section4Container h2 {
-    font-family: 'gloock', sans-serif;
+    font-family: var(--display-font);
     width: fit-contet;
-    font-size: 10vw;
+    font-size: 7vw;
     font-weight: 100;
     letter-spacing: normal;
     line-height: 1.2em;
-    color: #052f5f;
+    color: var(--primary-color);
     text-align: center;
 }
 
@@ -272,7 +297,7 @@ h1 {
     gap: 40px;
     padding: 40px;
     border-radius: 40px;
-    background-color: #f2f2f2;
+    background-color: var(--tertiary-color);
 }
 
 .section5 div .section5Container img {
@@ -330,7 +355,7 @@ h1 {
     gap: 20px;
     padding: 40px;
     border-radius: 30px;
-    background-color: #f2f2f2;
+    background-color: var(--tertiary-color);
 
 }
 
@@ -342,12 +367,12 @@ h1 {
 }
 
 .section6 div div h3 {
-    font-family: 'gloock', sans-serif;
+    font-family: var(--display-font);
     font-size: 40px;
     font-weight: 100;
     letter-spacing: normal;
     line-height: 1em;
-    color: #052f5f;
+    color: var(--primary-color);
 }
 
 .section6 div div button {
@@ -358,10 +383,10 @@ h1 {
     border: none;
     border-radius: 8px;
     font-size: 14px;
-    font-family: 'Mulish';
+    font-family: var(--text-font);
     font-weight: 500;
     line-height: 1.2em;
-    background-color: #06a77d;
+    background-color: var(--secondary-color);
     color: #fff;
     cursor: pointer;
 }
@@ -402,7 +427,7 @@ h1 {
     height: 16px;
 }
 
-.section6 div div di {
+.section6 div div div {
     font-size: 14px;
     color: #000;
     letter-spacing: 0;
@@ -424,13 +449,13 @@ h1 {
 
 .section7 h2 {
     max-width: 1000px;
-    font-family: 'gloock', sans-serif;
+    font-family: var(--display-font);
     font-size: 48px;
     font-weight: 100;
     letter-spacing: normal;
     line-height: 1.2em;
     text-align: start;
-    color: #052f5f;
+    color: var(--primary-color);
 }
 
 .section7 .section7Container {
@@ -456,11 +481,11 @@ h1 {
 }
 
 .section7 .section7Container div h2 {
-    font-family: 'Mulish', sans-serif;
+    font-family: var(--text-font);
     font-size: 20px;
     letter-spacing: -0.025em;
     line-height: 1.5em;
-    color: #005377;
+    color: var(--primary-color);
     text-align: start;
     font-weight: normal;
 }
@@ -509,7 +534,7 @@ footer:last-child {
     width: 100%;
     height: auto;
     font-size: 16px;
-    color: #052f5f;
+    color: var(--primary-color);
     letter-spacing: 0;
     line-height: 1.5em;
     text-align: center;
@@ -546,7 +571,7 @@ footer .footerContainer div div {
 
 footer .footerContainer div div a {
     font-size: 16px;
-    color: #052f5f;
+    color: var(--primary-color);
     letter-spacing: 0;
     line-height: 1.5em;
     text-decoration: none;

@@ -6,24 +6,28 @@ function hero() {
     return (
         <div className="container">
             <div className="hero">
-                <div>
-                    <ScrollEffect>
-                        <h1>Welcome to GuideLabs</h1>
-                    </ScrollEffect>
-                </div>
-                <div>
-                    <ScrollEffect>
-                        <button className="btnGetStarted">Get Started</button>
-                        <button className="btnLearnMore">Learn More</button>
-                    </ScrollEffect>
-                </div>
-                <div>
-                    <ScrollEffect>
-                        <p className="description">
-                            Confused about what subjects to choose for your Advanced Levels? We've got you
-                            covered. Explore your options and discover the perfect path to your dream career with our interactive web app. Take quizzes, analyze your strengths, and unlock a world of exciting possibilities. Start your journey today!
-                        </p>
-                    </ScrollEffect>
+                <div className="heroWrapper">
+                    <div className="title">
+                        <ScrollEffect>
+                            <h1>Welcome to GuideLabs</h1>
+                        </ScrollEffect>
+
+                        <ScrollEffect>
+                            <p className="description">
+                                Confused about what subjects to choose for your Advanced Levels? We've got you
+                                covered. Explore your options and discover the perfect path to your dream career with our interactive web app. Take quizzes, analyze your strengths, and unlock a world of exciting possibilities. Start your journey today!
+                            </p>
+                        </ScrollEffect>
+                        <div>
+                            <ScrollEffect>
+                                <button className="btnGetStarted">Get Started</button>
+                                <button className="btnLearnMore">Learn More</button>
+                            </ScrollEffect>
+                        </div>
+                    </div>
+
+                    <iframe src='https://my.spline.design/untitled-900d11717458b3f2ead534cb30eb9d1b/' frameborder='0' width='100%' height='100%'></iframe>
+
                 </div>
             </div>
 
