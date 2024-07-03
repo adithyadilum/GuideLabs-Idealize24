@@ -7,8 +7,8 @@ import Result from './Result.jsx';
 function App() {
     return (
         <div>
-            {/* <Hero />
-            <Question /> */}
+            <Hero />
+            <Question />
             <Result />
         </div>
     )
