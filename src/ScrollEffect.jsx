@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import './ScrollEffect.css';
+import './css/ScrollEffect.css';
 
 const ScrollEffect = ({ children }) => {
     const [inView, setInView] = useState(false);

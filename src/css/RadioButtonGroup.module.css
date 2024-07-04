@@ -1,0 +1,60 @@
+/* RadioButtonGroup.module.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Gloock&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+    --primary-color: #451952;
+    --secondary-color: #662549;
+    --tertiary-color: #f7e5ea;
+    --yellow-color: #F39F5A;
+
+    --display-font: 'Gloock', sans-serif;
+    --text-font: 'Mulish', sans-serif;
+    --button-size: 25px;
+}
+
+.radioGroup {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.radioLabel {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    font-size: 16px;
+    font-family: var(--text-font);
+    cursor: pointer;
+}
+
+.radioInput {
+    margin-right: 10px;
+    appearance: none;
+    background-color: #fff;
+    border: 2px solid var(--secondary-color);
+    border-radius: 50%;
+    width: var(--button-size);
+    height: var(--button-size);
+    position: relative;
+    outline: none;
+    cursor: pointer;
+}
+
+.radioInput:checked::before {
+    content: '';
+    display: block;
+    width: calc(var(--button-size) * 0.6);
+    height: calc(var(--button-size) * 0.6);
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.radioInput:hover {
+    border-color: var(--secondary-color);
+}

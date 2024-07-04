@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloock&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+  --primary-color: #451952;
+  --secondary-color: #662549;
+  --tertiary-color: #f7e5ea;
+  --yellow-color: #F39F5A;
+
+  --display-font: 'Gloock', sans-serif;
+  --text-font: 'Mulish', sans-serif;
+
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: 'Mulish', sans-serif;
+  font-style: normal;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #FFE6E6;
+  height: 100vh;
+}
+
+.wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('./assets/bg.svg') no-repeat center center;
+  background-size: cover;
+  pointer-events: none;
+}
+
+.container1 {
+  max-width: 600px;
+  margin: 20px;
+  background-color: #f7e5f3;
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container2Wrapper {
+  max-width: 900px;
+  margin: 20px;
+  background-color: #f7e5f3;
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.qCardh2 {
+  color: #451952;
+  text-align: center;
+  margin-top: 57.92px;
+  font-size: xx-large;
+  font-family: 'gloock', sans-serif;
+  font-weight: 100;
+}
+
+.qCardh3 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #662549;
+  font-size: large;
+  font-weight: 600;
+}
+
+.btnGroup {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 30px;
+  width: 80%;
+}
+
+.container2 .grid {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 30px;
+  width: 85%;
+  border: solid 1px var(--secondary-color);
+  border-radius: 25px;
+  padding: 15px;
+}
+
+.svgImg {
+  width: 700px;
+  height: 700px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.btn {
+  font-family: 'Mulish', sans-serif;
+}
+
+.btnAnswer {
+  background-color: #f7e5f3;
+  color: #2d0f4a;
+  border-radius: 15px;
+  border: 1px solid #2d0f4a;
+  font-size: large;
+  padding: 5px 20px;
+  margin-bottom: 20px;
+}
+
+.btnAnswer:hover {
+  color: var(--bs-btn-hover-color);
+  background-color: #AE445A;
+  border-color: #AE445A;
+}
+
+.btnSubmit {
+  background-color: #451952;
+  color: #dad7f7;
+  border-radius: 15px;
+  font-size: large;
+  padding: 5px 30px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+}
+
+
+.btnSubmit:hover {
+  color: #451952;
+  background-color: #dad7f7;
+  border: 1px solid #451952;
+}

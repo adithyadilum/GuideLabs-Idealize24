@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloock&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+:root {
+    --primary-color: #451952;
+    --secondary-color: #662549;
+    --tertiary-color: #f7e5ea;
+    --yellow-color: #F39F5A;
+
+    --display-font: 'Gloock', sans-serif;
+    --text-font: 'Mulish', sans-serif;
+
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    font-family: var(--text-font);
+    font-style: normal;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5vh;
+    user-select: none;
+}
+
+
+#stripes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    will-change: transform;
+}
+
+
+.title {
+    font-family: var(--display-font);
+    font-size: 3.5rem;
+    font-weight: 100;
+    color: #fff;
+    text-align: center;
+    z-index: 1;
+}
+
+.description {
+    font-size: 1.2rem;
+    font-weight: normal;
+    color: #fff;
+    text-align: center;
+    margin-top: 10px;
+    z-index: 1;
+}
+
+.btnShowResult {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    z-index: 1;
+}
+
+.btnShowResult:hover {
+    background-color: #45a049;
+}
+
+.cardWrapper {
+    width: 60vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    margin-top: 20px;
+}
+
+.card {
+    width: auto;
+    max-width: 85%;
+    height: auto;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    transition: 0.3s;
+    backdrop-filter: blur(10px) saturate(200%);
+    -webkit-backdrop-filter: blur(10px) saturate(200%);
+    background-color: hsla(0, 0%, 100%, 0.65);
+    border-radius: 25px;
+    user-select: none;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.cardTitle {
+    font-family: var(--display-font);
+    font-size: 2rem;
+    font-weight: 100;
+    color: var(--primary-color);
+    text-align: start;
+    margin: 20px;
+}
+
+.cardDescription {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #000;
+    text-align: start;
+    margin: 20px;
+}
+
+.cardContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.cardList li {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #000;
+    margin: 10px;
+    user-select: none;
+}
+
+.learnMoreLink {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #000;
+    text-align: start;
+    margin: 20px;
+    cursor: pointer;
+}
