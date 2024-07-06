@@ -1,58 +1,23 @@
 import React, { useState, useEffect } from "react";
 import styles from "./css/Result.module.css";
-import careerData from "./Data/careerData.js";
+import careerFields from "./Data/careerData_IT.js";
 import Slider from "react-slick";
 
-function Result() {
-    const [showResults, setShowResults] = useState(false);
-    const [selectedCareerIds, setSelectedCareerIds] = useState([1, 2]); // Example IDs of selected careers
-
-    const handleShowResults = () => {
-        setShowResults(true);
-    };
-
-
-    const handleManualEntry = () => {
-        const userInput = prompt("Enter career ID (e.g., 1, 2, 3):");
-        if (userInput) {
-            const ids = userInput.split(",").map(id => parseInt(id.trim(), 10));
-            setSelectedCareerIds(ids);
-        }
-    };
-    // Filter the career data to include only the selected careers
-    const selectedCareers = careerData.filter(career => selectedCareerIds.includes(career.id));
+function Result({ selectedFieldId }) {
+    const [selectedCareers, setSelectedCareers] = useState([]);
+    const [learnMoreContent, setLearnMoreContent] = useState(null);
 
     useEffect(() => {
-        let latestScrollY = 0;
-        let ticking = false;
+        // Filter the career data to include only the selected field's careers
+        const field = careerFields.find(career => career.fieldId === selectedFieldId);
+        if (field) {
+            setSelectedCareers(field.jobs);
+        }
+    }, [selectedFieldId]);
 
-        const handleScroll = () => {
-            latestScrollY = window.scrollY;
-            requestTick();
-        };
-
-        const requestTick = () => {
-            if (!ticking) {
-                requestAnimationFrame(update);
-                ticking = true;
-            }
-        };
-
-        const update = () => {
-            const parallaxElement = document.getElementById(styles.stripes);
-            if (parallaxElement) {
-                parallaxElement.style.transform = `translateY(${latestScrollY * 0.7}px)`;
-            }
-            ticking = false;
-        };
-
-        window.addEventListener('scroll', handleScroll);
-
-        // Cleanup function to remove the event listener
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+    const handleLearnMore = (career) => {
+        setLearnMoreContent(career);
+    };
 
     const settings = {
         dots: true,
@@ -81,37 +46,54 @@ function Result() {
     };
 
     return (
-        <div className={styles.container}>
-            <div className={styles.wrapper}>
-                <div id={styles.stripes}>
-                    <img src="src\assets\bgResult.svg" alt="" srcset="" />
-                </div>
-                <h1 className={styles.title}>Your Career Recommendations</h1>
-                <p className={styles.description}>Based on your answers, here are some careers that might be a great fit for you!</p>
-                <button type="button" className={styles.btnShowResult} onClick={handleShowResults}>Show</button>
-                <button type="button" className={styles.btnShowResult} onClick={handleManualEntry}>Enter ID Manually</button>
-
-
-                {showResults && (
-                    <Slider {...settings} className={styles.cardWrapper}>
-                        {selectedCareers.map((career, index) => (
-                            <div key={index} className={`${styles.card} ${selectedCareerIds.includes(career.id) ? styles.selected : ''}`}>
-                                <h2 className={styles.cardTitle}>{career.title}</h2>
-                                <p className={styles.cardDescription}>{career.description}</p>
-                                <div className={styles.cardContent}>
-                                    <ul className={styles.cardList}>
-                                        <li><strong>Skills Required:</strong> {career.keySkills.join(", ")}</li>
-                                        <li><strong>Salary Range:</strong> {career.salaryRange}</li>
-                                        <li><strong>Job Outlook:</strong> {career.jobOutlook}</li>
-                                    </ul>
-                                    <a href={career.learnMoreLink} className={styles.learnMoreLink} target="_blank" rel="noopener noreferrer">Learn More</a>
-                                </div>
-                            </div>
-                        ))}
-                    </Slider>
-                )}
+        <>
+            <div className={styles.stripes}>
+                <img src="src/assets/resultBg.svg" alt="Background" />
             </div>
-        </div>
+            <div className={styles.chevron}></div>
+            <div className={styles.illustration}>
+                <img src="src/assets/Website designer-pana.svg" alt="Illustration" />
+            </div>
+
+            {learnMoreContent ? (
+                <div className={styles.learnMoreContainer}>
+                    <h2 className={styles.learnMoreTitle}>{learnMoreContent.title}</h2>
+                    <p className={styles.learnMoreDescription}>{learnMoreContent.description}</p>
+                    <p><strong>Salary Range:</strong> {learnMoreContent.salaryRange}</p>
+                    <button type="button" onClick={() => setLearnMoreContent(null)}>Back</button>
+                </div>
+            ) : (
+                <>
+                    <div className={styles.container}>
+                        <div className={styles.wrapper}>
+                            <p className={styles.description}>Based on your responses, it seems you have a passion for</p>
+                            <h2 className={styles.title}>{careerFields.find(career => career.fieldId === selectedFieldId)?.field}</h2>
+                            <p className={styles.description}>Here are some exciting career paths you might want to explore...</p>
+                        </div>
+                    </div>
+                    <div className={styles.cardContainer}>
+                        <Slider {...settings} className={styles.cardWrapper}>
+                            {selectedCareers.map((career, index) => (
+                                <div key={index} className={styles.card}>
+                                    <h2 className={styles.cardTitle}>{career.title}</h2>
+                                    <div className={styles.cardContent}>
+                                        <p className={styles.cardDescription}>{career.description}</p>
+                                        <p className={styles.cardDescription}><strong>Salary Range:</strong> {career.salaryRange}</p>
+                                        <button
+                                            id={career.btnID}
+                                            type="button"
+                                            className={styles.learnMoreBtn}
+                                            onClick={() => handleLearnMore(career)}>
+                                            Learn More
+                                        </button>
+                                    </div>
+                                </div>
+                            ))}
+                        </Slider>
+                    </div>
+                </>
+            )}
+        </>
     );
 }
 

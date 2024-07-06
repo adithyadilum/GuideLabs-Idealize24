@@ -24,8 +24,8 @@ function App() {
             {currentStep === 2 && <SecondComponent buttonPressInfo={buttonPressInfo} />} */}
             {/* Add more steps as needed */}
             {/* <Hero /> */}
-            <Question />
-            {/* <Result /> */}
+            {/* <Question /> */}
+            <Result selectedFieldId={10} />
         </div>
     )
 }
