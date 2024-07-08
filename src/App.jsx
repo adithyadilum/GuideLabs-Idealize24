@@ -25,7 +25,7 @@ function App() {
             {/* Add more steps as needed */}
             {/* <Hero /> */}
             {/* <Question /> */}
-            <Result selectedFieldId={10} />
+            <Result selectedFieldId={1} />
         </div>
     )
 }

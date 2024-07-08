@@ -1,6 +1,7 @@
 import React from 'react';
 import './Hero.css';
 import ScrollEffect from './ScrollEffect';
+import Footer from './Footer';
 
 function hero() {
     return (
@@ -239,48 +240,8 @@ function hero() {
                     </div>
                 </ScrollEffect>
             </section>
+            <Footer />
 
-            <footer>
-                <ScrollEffect>
-                    <div className='footerContainer'>
-                        <div>
-                            <p>Learn</p>
-                            <div>
-                                <a href="http://">Blog</a>
-                                <a href="http://">About</a>
-                                <a href="http://">Resources</a>
-                            </div>
-                        </div>
-                        <div>
-                            <p>Help</p>
-                            <div>
-                                <a href="http://">FAQ</a>
-                                <a href="http://">Contact</a>
-                                <a href="http://">Guidance</a>
-                            </div>
-                        </div>
-                        <div>
-                            <p>Company</p>
-                            <div>
-                                <a href="http://">Culture</a>
-                                <a href="http://">Team</a>
-                                <a href="http://">Careers</a>
-                            </div>
-                        </div>
-                    </div>
-                </ScrollEffect>
-                <ScrollEffect>
-                    <div className='footerContainer'>
-                        <div>
-                            <img src="" alt="" />
-                            <img src="" alt="" />
-                            <img src="" alt="" />
-                            <img src="" alt="" />
-                        </div>
-                        <p className='tagline'>&copy; {new Date().getFullYear()} GuideLabs. Your future is our project!</p>
-                    </div>
-                </ScrollEffect>
-            </footer>
         </div>
     );
 }
