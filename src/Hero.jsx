@@ -1,11 +1,74 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Hero.css';
 import ScrollEffect from './ScrollEffect';
 import Footer from './Footer';
+import Question from './Question';
 
-function hero() {
+function Hero() {
+    const [showQuestion, setShowQuestion] = useState(false);
+
+    const section1Ref = useRef(null);
+    const section2Ref = useRef(null);
+    const section5Ref = useRef(null);
+    const section6Ref = useRef(null);
+    const getStartedSectionRef = useRef(null);
+    const footerRef = useRef(null);
+
+    const handleNext = () => {
+        setShowQuestion(true);
+    };
+
+    const scrollToSection = (ref) => {
+        ref.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    };
+
+    if (showQuestion) {
+        return <Question />;
+    }
+    const [isInGetStartedSection, setIsInGetStartedSection] = useState(false);
+
+    useEffect(() => {
+        const handleIntersection = (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setIsInGetStartedSection(true);
+                } else {
+                    setIsInGetStartedSection(false);
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(handleIntersection, {
+            root: null,
+            threshold: 0.5,
+        });
+
+        if (getStartedSectionRef.current) {
+            observer.observe(getStartedSectionRef.current);
+        }
+
+        return () => {
+            if (getStartedSectionRef.current) {
+                observer.unobserve(getStartedSectionRef.current);
+            }
+        };
+    }, []);
     return (
-        <div className="container">
+        <div className={`container ${isInGetStartedSection ? 'bg-change' : ''}`}>
+            <div className="navBar">
+                <ScrollEffect>
+                    <div className="logo">
+                        <img src="src/assets/logo-project NEW-01.svg" alt="" />
+                    </div>
+                    <div className="navLinks">
+                        <a href="#section1" onClick={() => scrollToSection(section1Ref)}>Who are we?</a>
+                        <a href="#section2" onClick={() => scrollToSection(section2Ref)}>What we do</a>
+                        <a href="#section5" onClick={() => scrollToSection(section5Ref)}>Testimonials</a>
+                        <a href="#section6" onClick={() => scrollToSection(section6Ref)}>Pricing</a>
+                        <a href="#footer" onClick={() => scrollToSection(footerRef)}>Contact</a>
+                    </div>
+                </ScrollEffect>
+            </div>
             <div className="hero">
                 <div className="heroWrapper">
                     <div className="title">
@@ -21,8 +84,8 @@ function hero() {
                         </ScrollEffect>
                         <div>
                             <ScrollEffect>
-                                <button className="btnGetStarted">Get Started</button>
-                                <button className="btnLearnMore">Learn More</button>
+                                <button className="btnGetStarted" onClick={() => scrollToSection(getStartedSectionRef)}>Get Started</button>
+                                <button className="btnLearnMore" >Learn More</button>
                             </ScrollEffect>
                         </div>
                     </div>
@@ -32,7 +95,7 @@ function hero() {
                 </div>
             </div>
 
-            <section className="section1">
+            <section id="section1" ref={section1Ref} className="section1">
                 <div>
                     <ScrollEffect>
                         <p>Who are we?</p>
@@ -45,7 +108,7 @@ function hero() {
                 </div>
             </section>
 
-            <section className="section2">
+            <section id="section2" ref={section2Ref} className="section2">
                 <div>
                     <ScrollEffect>
                         <div className='imgPlaceholder'>
@@ -74,18 +137,19 @@ function hero() {
                 </div>
             </section>
 
-            <section className="section3">
-                <ScrollEffect>
-                    <img src="https://img.icons8.com/?size=100&id=MSWiZ5qvGzVg&format=png&color=000000" alt="" /></ScrollEffect>
-                <img src="https://img.icons8.com/?size=100&id=MSWiZ5qvGzVg&format=png&color=000000" alt="" />
-                <img src="https://img.icons8.com/?size=100&id=MSWiZ5qvGzVg&format=png&color=000000" alt="" />
-                <img src="https://img.icons8.com/?size=100&id=MSWiZ5qvGzVg&format=png&color=000000" alt="" />
-                <img src="https://img.icons8.com/?size=100&id=MSWiZ5qvGzVg&format=png&color=000000" alt="" />
-
+            <section id="section3" className="section3">
+                <div>
+                    <ScrollEffect>
+                        <img src="https://img.icons8.com/?size=100&id=MSWiZ5qvGzVg&format=png&color=000000" alt="" />
+                    </ScrollEffect>
+                    <img src="https://img.icons8.com/?size=100&id=MSWiZ5qvGzVg&format=png&color=000000" alt="" />
+                    <img src="https://img.icons8.com/?size=100&id=MSWiZ5qvGzVg&format=png&color=000000" alt="" />
+                    <img src="https://img.icons8.com/?size=100&id=MSWiZ5qvGzVg&format=png&color=000000" alt="" />
+                    <img src="https://img.icons8.com/?size=100&id=MSWiZ5qvGzVg&format=png&color=000000" alt="" />
+                </div>
             </section>
 
-
-            <section className="section4">
+            <section id="section4" className="section4">
                 <div>
                     <ScrollEffect>
                         <div className='section4Container'>
@@ -101,17 +165,7 @@ function hero() {
                 </div>
             </section>
 
-            <section className="section3">
-                <ScrollEffect>
-                    <img src="https://img.icons8.com/?size=100&id=MSWiZ5qvGzVg&format=png&color=000000" alt="" />
-                    <img src="https://img.icons8.com/?size=100&id=MSWiZ5qvGzVg&format=png&color=000000" alt="" />
-                    <img src="https://img.icons8.com/?size=100&id=MSWiZ5qvGzVg&format=png&color=000000" alt="" />
-                    <img src="https://img.icons8.com/?size=100&id=MSWiZ5qvGzVg&format=png&color=000000" alt="" />
-                    <img src="https://img.icons8.com/?size=100&id=MSWiZ5qvGzVg&format=png&color=000000" alt="" />
-                </ScrollEffect>
-            </section>
-
-            <section className="section5">
+            <section id="section5" ref={section5Ref} className="section5">
                 <div>
                     <ScrollEffect>
                         <div className='section5Container'>
@@ -130,7 +184,28 @@ function hero() {
                 </div>
             </section>
 
-            <section className='section6'>
+            <section id="getStartedSection" ref={getStartedSectionRef} className='getStartedSection'>
+                <div className='getStartedContainer'>
+                    <ScrollEffect>
+                        <div className='getStartedContent'>
+                            <h3>Not sure which industry suits you best?</h3>
+                            <div>
+                                <p>Take our career industry test to find the perfect match!</p>
+                                <button type="button">Lets go</button></div>
+                        </div>
+                    </ScrollEffect>
+                    <ScrollEffect>
+                        <div className='getStartedContent'>
+                            <h3>Already know your ideal industry?</h3>
+                            <div>
+                                <p>Select your career path to start exploring your options!</p>
+                                <button type="button" onClick={handleNext}>Lets go</button></div>
+                        </div>
+                    </ScrollEffect>
+                </div>
+            </section>
+
+            <section id="section6" ref={section6Ref} className='section6'>
                 <div>
                     <ScrollEffect>
                         <div className='card'>
@@ -139,19 +214,19 @@ function hero() {
                             <h3>0LKR</h3>
                             <div className='cardContent'>
                                 <div>
-                                    <span class="material-symbols-rounded">check</span>
+                                    <span className="material-symbols-rounded">check</span>
                                     <p>Profile Creation</p>
                                 </div>
                                 <div>
-                                    <span class="material-symbols-rounded">check</span>
+                                    <span className="material-symbols-rounded">check</span>
                                     <p>Basic Guidance</p>
                                 </div>
                                 <div>
-                                    <span class="material-symbols-rounded">check</span>
+                                    <span className="material-symbols-rounded">check</span>
                                     <p>Limited Support</p>
                                 </div>
                                 <div>
-                                    <span class="material-symbols-rounded">check</span>
+                                    <span className="material-symbols-rounded">check</span>
                                     <p>2 Weeks</p>
                                 </div>
                             </div>
@@ -167,19 +242,19 @@ function hero() {
                             <h3>499LKR</h3>
                             <div className='cardContent'>
                                 <div>
-                                    <span class="material-symbols-rounded">check</span>
+                                    <span className="material-symbols-rounded">check</span>
                                     <p>Advanced Insights</p>
                                 </div>
                                 <div>
-                                    <span class="material-symbols-rounded">check</span>
+                                    <span className="material-symbols-rounded">check</span>
                                     <p>Direct mentorship</p>
                                 </div>
                                 <div>
-                                    <span class="material-symbols-rounded">check</span>
+                                    <span className="material-symbols-rounded">check</span>
                                     <p>Unlimited Support</p>
                                 </div>
                                 <div>
-                                    <span class="material-symbols-rounded">check</span>
+                                    <span className="material-symbols-rounded">check</span>
                                     <p>30 Days</p>
                                 </div>
                             </div>
@@ -195,19 +270,19 @@ function hero() {
                             <h3>999LKR</h3>
                             <div className='cardContent'>
                                 <div>
-                                    <span class="material-symbols-rounded">check</span>
+                                    <span className="material-symbols-rounded">check</span>
                                     <p>Complete Access</p>
                                 </div>
                                 <div>
-                                    <span class="material-symbols-rounded">check</span>
+                                    <span className="material-symbols-rounded">check</span>
                                     <p>Peer Networking</p>
                                 </div>
                                 <div>
-                                    <span class="material-symbols-rounded">check</span>
+                                    <span className="material-symbols-rounded">check</span>
                                     <p>Priority Support</p>
                                 </div>
                                 <div>
-                                    <span class="material-symbols-rounded">check</span>
+                                    <span className="material-symbols-rounded">check</span>
                                     <p>Lifetime Access</p>
                                 </div>
                             </div>
@@ -219,7 +294,7 @@ function hero() {
                 </div>
             </section>
 
-            <section className="section7">
+            <section id="footer" ref={footerRef} className="section7">
                 <ScrollEffect>
                     <h2>Enlighten me...</h2>
                 </ScrollEffect>
@@ -241,9 +316,8 @@ function hero() {
                 </ScrollEffect>
             </section>
             <Footer />
-
         </div>
     );
 }
 
-export default hero;
+export default Hero;

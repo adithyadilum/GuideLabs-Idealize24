@@ -12,6 +12,10 @@
 
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
 }
@@ -21,8 +25,53 @@ body {
     font-style: normal;
 }
 
+.container {
+    position: relative;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    transition: background-color 0.5s ease;
+}
+
+.container.bg-change {
+    background-color: var(--primary-color);
+    /* Replace with your desired background color */
+}
+
+.getStartedSection {
+    background-color: var(--primary-color);
+    /* Same as above */
+    /* Other styles */
+}
+
+/* Optional: Hide other sections when the background color changes */
+.container.bg-change .section1,
+.container.bg-change .navBar,
+.container.bg-change .hero,
+.container.bg-change .section2,
+.container.bg-change .section3,
+.container.bg-change .section4,
+.container.bg-change .section5,
+.container.bg-change .section6,
+.container.bg-change .section7 {
+    opacity: 0;
+    pointer-events: none;
+    /* Prevent interactions with hidden sections */
+    transition: opacity 0.5s ease;
+}
+
+.container.bg-change .getStartedSection {
+    opacity: 1;
+    pointer-events: all;
+}
+
+
 .hero,
-.container,
 .section1,
 .section2 {
     position: relative;
@@ -33,6 +82,54 @@ body {
     justify-content: center;
 }
 
+.navBar {
+    position: absolute;
+    width: 99%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+    z-index: 100;
+
+    margin-top: 60px;
+}
+
+.navLinks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.418);
+    border-radius: 0px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    margin-top: 60px;
+}
+
+.navBar h1 {
+    font-family: var(--display-font);
+    font-size: 24px;
+    font-weight: 100;
+    color: var(--primary-color);
+}
+
+.navBar a {
+    font-family: var(--text-font);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: 25px;
+}
+
+.navBar img {
+    width: 300px;
+}
+
+
 .hero {
     flex-direction: row;
     height: 100vh;
@@ -41,7 +138,7 @@ body {
 
 .heroWrapper {
     width: 100%;
-    max-width: 1500px;
+    max-width: 1200px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -53,6 +150,9 @@ body {
     gap: 40px;
 }
 
+iframe {
+    width: 60%;
+}
 
 .section1 h2 {
     font-family: var(--display-font);
@@ -185,14 +285,89 @@ h1 {
     color: var(--secondary-color);
 }
 
+.getStartedSection {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0px;
+    overflow: hidden;
+    background-color: var(--primary-color);
+}
+
+.getStartedContainer {
+    width: 1000px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 40px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.getStartedContainer .getStartedContent {
+    display: flex;
+    width: 100%;
+    height: 35vh;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.getStartedContent div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.getStartedContainer h3 {
+    font-family: var(--display-font);
+    font-size: xxx-large;
+    font-weight: 100;
+    letter-spacing: 0;
+    line-height: 1.2em;
+    color: #fff;
+}
+
+.getStartedContainer button {
+    width: 50%;
+    display: inline-block;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 25px;
+    font-size: large;
+    font-family: var(--text-font);
+    font-weight: 700;
+    cursor: pointer;
+
+}
+
+.getStartedContainer p {
+    font-family: var(--text-font);
+    font-size: x-large;
+    font-weight: lighter;
+    letter-spacing: 0;
+    line-height: 1.5em;
+    color: #fff;
+
+}
+
 .section3 {
     width: 100%;
-    height: 400px;
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: nowrap;
-    padding: 100px 0px;
+    padding: 0px;
 }
 
 .section3 img {
@@ -208,7 +383,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 100px 0px;
+    padding: 50px 0px;
 }
 
 .section4 div {
@@ -289,7 +464,7 @@ h1 {
 .section5 div .section5Container {
     width: 100%;
     height: auto;
-    min-height: 400px;
+    min-height: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -304,7 +479,7 @@ h1 {
     width: 80px;
     height: 80px;
     position: absolute;
-    transform: translateY(-15em);
+    transform: translateY(-12em);
 }
 
 .section5 div .section5Container p {
@@ -395,9 +570,9 @@ h1 {
     width: 40px;
     height: 40px;
     position: absolute;
-    -webkit-transform: translateX(16em) translateY(-12em);
-    -ms-transform: translateX(16em) translateY(-12em);
-    transform: translateX(16em) translateY(-12em);
+    -webkit-transform: translateX(18em) translateY(-13em);
+    -ms-transform: translateX(18em) translateY(-13em);
+    transform: translateX(18em) translateY(-13em);
 }
 
 .section6 .cardContent {

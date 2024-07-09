@@ -22,6 +22,16 @@ body {
     font-style: normal;
 }
 
+.footerWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 footer {
     width: 100%;
     height: auto;
@@ -29,9 +39,8 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 100px 0px;
-    gap: 100px;
-    border-top: solid 1px #000;
+    padding: 60px 0px;
+    border-radius: 6rem 6rem 0 0;
     background-color: var(--primary-color);
 }
 
@@ -43,21 +52,14 @@ footer .footerContainer {
     justify-content: center;
     flex-wrap: nowrap;
     gap: 40px;
-    padding: 0;
+    padding-left: 10%;
     overflow: hidden;
-}
-
-footer:last-child {
-    flex-direction: column;
-    gap: 20px;
-    padding-top: 100px;
-    border-top: solid 1px #f2f2f2;
 }
 
 .tagline {
     width: 100%;
     height: auto;
-    font-size: 16px;
+    font-size: large;
     color: #fff;
     letter-spacing: 0;
     line-height: 1.5em;
@@ -99,4 +101,26 @@ footer .footerContainer div div a {
     letter-spacing: 0;
     line-height: 1.5em;
     text-decoration: none;
+}
+
+.footerLinkContainer {
+    margin-top: 40px;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+    padding: 0px;
+}
+
+.footerLinkContainer .socialMediaLinks {
+    display: flex;
+    gap: 20px;
+}
+
+.footerLinkContainer a img {
+    width: 40px;
+    height: 40px;
 }

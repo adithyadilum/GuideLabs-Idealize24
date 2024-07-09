@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from './css/Question.module.css';
 import RadioButtonGroup from './RadioButtonGroup.jsx';
 import questions from './Data/questionData_IT.js';
-import Results from './Result.jsx';
+import Result from './Result.jsx';
 
 function Question() {
     const [currentPage, setCurrentPage] = useState(0);
@@ -38,7 +38,7 @@ function Question() {
     }, [showResults]);
 
     if (showResults) {
-        return <Results />;
+        return <Result selectedFieldId={1} />;
     }
 
     const currentQuestion = questions[currentPage];
@@ -47,9 +47,7 @@ function Question() {
 
     return (
         <div className={styles.wrapper}>
-            <div className={styles.progressContainer}>
-                <div className={styles.progressBar} style={{ width: `${progressWidth}%` }}></div>
-            </div>
+            <img src="src\assets\1-02.svg" alt="" srcset="" />
             {currentQuestion.type === 'single' ? (
                 <div className={styles.container1Wrapper}>
                     <div className={`${styles.container1} ${fade ? styles.visible : styles.hidden}`}>
@@ -65,6 +63,9 @@ function Question() {
                                 Back
                             </button>
                         </div>
+                    </div>
+                    <div className={styles.progressContainer}>
+                        <div className={styles.progressBar} style={{ width: `${progressWidth}%` }}></div>
                     </div>
                 </div>
             ) : (
@@ -86,8 +87,12 @@ function Question() {
                             {isLastQuestion ? "Show Results" : "Next"}
                         </button>
                     </div>
+                    <div className={styles.progressContainer}>
+                        <div className={styles.progressBar} style={{ width: `${progressWidth}%` }}></div>
+                    </div>
                 </div>
             )}
+
         </div>
     );
 }

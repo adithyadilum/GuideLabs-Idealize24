@@ -1,6 +1,28 @@
 const questionsIT = [
     {
         type: 'single',
+        text: 'Choose the stream you are interested in',
+        options: ['Engineering',
+            'Information Technology',
+            'Natural Sciences',
+            'Medicine and Healthcare',
+            'Business and Management',
+            'Social Sciences',
+            'Education',
+            'Law and Legal Studies',
+            'Arts and Humanities',
+            'Agriculture and Veterinary Sciences',
+            'Environmental and Earth Sciences',
+            'Tourism and Hospitality Management',
+            'Design and Creative Arts',
+            'Sports Sciences',
+            'Aviation Studies',
+            'Psychology and Counseling'
+        ],
+        category: 'Preference'
+    },
+    {
+        type: 'single',
         text: 'When faced with a technical issue, I prefer to:',
         options: ['Research solutions online.', 'Experiment and try different approaches.', 'Ask for help from a technical expert.'],
         category: 'Technical Preference'

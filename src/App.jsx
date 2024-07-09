@@ -23,9 +23,9 @@ function App() {
             {/* {currentStep === 1 && <FirstComponent onButtonPress={(info) => handleButtonPress(1, info)} />}
             {currentStep === 2 && <SecondComponent buttonPressInfo={buttonPressInfo} />} */}
             {/* Add more steps as needed */}
-            {/* <Hero /> */}
+            <Hero />
             {/* <Question /> */}
-            <Result selectedFieldId={1} />
+            {/* <Result selectedFieldId={1} /> */}
         </div>
     )
 }
