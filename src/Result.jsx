@@ -170,7 +170,7 @@ function Result({ selectedFieldId }) {
             ) : (
                 <>
                     <div className={styles.container}>
-                        <div className={styles.wrapper}>
+                        <div className={styles.wrapperTitle}>
                             <p className={styles.description}>Based on your responses, it seems you have a passion for</p>
                             <h2 className={styles.title}>{careerFields.find(career => career.fieldId === selectedFieldId)?.field}</h2>
                             <p className={styles.description}>Here are some exciting career paths you might want to explore...</p>
@@ -201,13 +201,15 @@ function Result({ selectedFieldId }) {
             <div className={styles.mortivationalQuoteWrapper}>
                 <div className={styles.mortivationalQuoteContainer}>
                     <p className={styles.mortivationalQuoteHead}>
-                        Dawn Awaits
+                        Where Dreams Meet Direction
                     </p>
                     <p className={styles.mortivationalQuoteP} >
                         You've got the world at your fingertips, don't just reach out-grab it! With the right career, the sky's no longer the limit, it's the destination. So saddle up, it's time to conquer those stars.
                     </p>
                 </div>
+                <button type="button" className={styles.backBtn}>Back to Home</button>
             </div>
+
             <Footer />
         </>
     );

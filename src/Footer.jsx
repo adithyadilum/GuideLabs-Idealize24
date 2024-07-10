@@ -37,10 +37,10 @@ function Footer() {
                 <ScrollEffect>
                     <div className={styles.footerLinkContainer}>
                         <div className={styles.socialMediaLinks}>
-                            <a href="http://"> <img src="src\assets\iconFacebook.svg" alt="" srcset="" /> </a>
-                            <a href="http://"> <img src="src\assets\iconInstagram.svg" alt="" srcset="" /> </a>
-                            <a href="http://"> <img src="src\assets\iconX.svg" alt="" srcset="" /> </a>
-                            <a href="http://"> <img src="src\assets\iconYoutube.svg" alt="" srcset="" /> </a>
+                            <a href="http://"> <img src="src\assets\iconFacebook.svg" alt="" /> </a>
+                            <a href="http://"> <img src="src\assets\iconInstagram.svg" alt="" /> </a>
+                            <a href="http://"> <img src="src\assets\iconX.svg" alt="" /> </a>
+                            <a href="http://"> <img src="src\assets\iconYoutube.svg" alt="" /> </a>
                         </div>
                         <p className={styles.tagline}>&copy; {new Date().getFullYear()} GuideLabs. Your future is our project!</p>
                     </div>

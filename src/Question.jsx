@@ -47,7 +47,7 @@ function Question() {
 
     return (
         <div className={styles.wrapper}>
-            <img src="src\assets\1-02.svg" alt="" srcset="" />
+            <img src="src\assets\rainbow-vortex.svg" alt="" srcset="" />
             {currentQuestion.type === 'single' ? (
                 <div className={styles.container1Wrapper}>
                     <div className={`${styles.container1} ${fade ? styles.visible : styles.hidden}`}>

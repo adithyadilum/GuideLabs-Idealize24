@@ -69,7 +69,7 @@ body {
   width: 700px;
   min-height: 450px;
   padding: 30px 30px 0 30px;
-  background-color: #f7e5f3;
+  background-color: #ffffff;
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
   position: relative;
@@ -94,7 +94,7 @@ body {
 .container2Wrapper {
   width: 750px;
   padding: 30px 30px 0 30px;
-  background-color: #f7e5f3;
+  background-color: #ffffff;
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
   position: relative;
@@ -189,7 +189,7 @@ body {
 }
 
 .btnAnswer {
-  background-color: #f7e5f3;
+  background-color: #e8e5f7;
   color: #2d0f4a;
   border-radius: 15px;
   border: 1px solid #2d0f4a;
@@ -202,13 +202,13 @@ body {
 
 .btnAnswer:hover {
   color: var(--bs-btn-hover-color) !important;
-  background-color: #AE445A;
-  border-color: #AE445A;
+  background-color: #a287bb;
+  border-color: transparent;
 }
 
 .btnSubmit {
   background-color: #451952;
-  color: #dad7f7;
+  color: #e8e5f7;
   border-radius: 15px;
   font-size: large;
   padding: 5px 30px;
@@ -219,6 +219,6 @@ body {
 
 .btnSubmit:hover {
   color: #451952;
-  background-color: #dad7f7;
+  background-color: #e8e5f7;
   border: 1px solid #451952;
 }
