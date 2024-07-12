@@ -1,0 +1,25 @@
+.backToTop {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 1000;
+}
+
+.scrollButton {
+    background-color: var(--secondary-color);
+    font-family: var(--text-font);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.scrollButton:hover {
+    background-color: var(--primary-color);
+}
+
+.scrollButton:focus {
+    outline: none;
+}

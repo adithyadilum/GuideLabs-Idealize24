@@ -3,6 +3,7 @@ import React from 'react';
 import Hero from './Hero.jsx';
 import Question from './Question.jsx';
 import Result from './Result.jsx';
+import QuestionSet1 from './QuestionSet1.jsx';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -25,6 +26,7 @@ function App() {
             {/* Add more steps as needed */}
             <Hero />
             {/* <Question /> */}
+            {/* <QuestionSet1 /> */}
             {/* <Result selectedFieldId={1} /> */}
         </div>
     )

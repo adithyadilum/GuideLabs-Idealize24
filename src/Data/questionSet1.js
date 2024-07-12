@@ -1,0 +1,35 @@
+// questionSet1.js
+const questions = [
+    { id: 1, text: "How excited are you to design and build structures, like buildings or bridges?" },
+    { id: 2, text: "How much do you enjoy conducting scientific experiments in a lab?" },
+    { id: 3, text: "How fun is it for you to create apps, games, or software programs?" },
+    { id: 4, text: "How much do you enjoy managing and leading a team to complete a project?" },
+    { id: 5, text: "How interesting is it for you to debate or argue cases like a lawyer?" },
+    { id: 6, text: "How much do you enjoy creating visual art, such as drawing, painting, or digital design?" },
+    { id: 7, text: "How excited are you to perform on stage, act, or play music?" },
+    { id: 8, text: "How much do you enjoy working with animals, either on a farm or in a veterinary setting?" },
+    { id: 9, text: "How curious are you about understanding human behavior and psychology?" },
+    { id: 10, text: "How passionate are you about helping people stay healthy and fit?" },
+    { id: 11, text: "How interested are you in protecting the environment and studying natural ecosystems?" },
+    { id: 12, text: "How much do you enjoy teaching others and helping them learn?" },
+    { id: 13, text: "How interested are you in playing sports, coaching, or studying sports science?" },
+    { id: 14, text: "How excited are you to plan, organize, and manage events or travel experiences?" },
+    { id: 15, text: "How thrilling is it for you to think about piloting an aircraft?" },
+    { id: 16, text: "How much do you enjoy writing stories, essays, or engaging in literary analysis?" },
+    { id: 17, text: "How adventurous do you find researching plants, animals, and their habitats?" },
+    { id: 18, text: "How much do you enjoy designing buildings, landscapes, or urban areas?" },
+    { id: 19, text: "How interested are you in creating business plans and managing companies?" },
+    { id: 20, text: "How fulfilling is it for you to help others with their mental health and emotional well-being?" },
+    { id: 21, text: "How much do you enjoy working with computers and technology?" },
+    { id: 22, text: "How excited are you about studying the law and understanding legal systems?" },
+    { id: 23, text: "How much do you enjoy studying history, culture, and languages?" },
+    { id: 24, text: "How interested are you in improving farming techniques and animal husbandry?" },
+    { id: 25, text: "How much do you enjoy analyzing data and conducting scientific research?" },
+    { id: 26, text: "How passionate are you about designing clothing, interiors, or other creative products?" },
+    { id: 27, text: "How much do you enjoy understanding the human mind and counseling people?" },
+    { id: 28, text: "How interested are you in studying the earth, its materials, and its processes?" },
+    { id: 29, text: "How excited are you about developing new medical treatments and improving healthcare?" },
+    { id: 30, text: "How much do you enjoy performing physical activities and learning about the body?" }
+];
+
+export default questions;

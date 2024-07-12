@@ -13,7 +13,7 @@ const questionsIT = [
             'Arts and Humanities',
             'Agriculture and Veterinary Sciences',
             'Environmental and Earth Sciences',
-            'Tourism and Hospitality Management',
+            'Tourism & Hospitality Management',
             'Design and Creative Arts',
             'Sports Sciences',
             'Aviation Studies',

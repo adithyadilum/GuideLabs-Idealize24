@@ -3,9 +3,12 @@ import './Hero.css';
 import ScrollEffect from './ScrollEffect';
 import Footer from './Footer';
 import Question from './Question';
+import QuestionSet1 from './QuestionSet1';
+import BackToTop from './BackToTop.jsx';
 
 function Hero() {
     const [showQuestion, setShowQuestion] = useState(false);
+    const [showQuestionSet1, setShowQuestionSet1] = useState(false);
     const [isInGetStartedSection, setIsInGetStartedSection] = useState(false);
 
     const section1Ref = useRef(null);
@@ -18,6 +21,10 @@ function Hero() {
     const handleNext = () => {
         setShowQuestion(true);
         console.log('clicked');
+    };
+    const handleNext1 = () => {
+        setShowQuestionSet1(true);
+        console.log('clickedSet1');
     };
 
     const scrollToSection = (ref) => {
@@ -57,7 +64,10 @@ function Hero() {
                 <div>
                     <Question />
                 </div>
-            ) : (
+            ) : showQuestionSet1 ? (
+                <div>
+                    <QuestionSet1 />
+                </div>) : (
                 <>
                     <div className="navBar">
                         <ScrollEffect>
@@ -143,15 +153,13 @@ function Hero() {
                     </section>
 
                     <section id="section3" className="section3">
-                        <div>
-                            <ScrollEffect>
-                                <img src="https://img.icons8.com/?size=100&id=MSWiZ5qvGzVg&format=png&color=000000" alt="" />
-                            </ScrollEffect>
+                        <ScrollEffect>
                             <img src="https://img.icons8.com/?size=100&id=MSWiZ5qvGzVg&format=png&color=000000" alt="" />
                             <img src="https://img.icons8.com/?size=100&id=MSWiZ5qvGzVg&format=png&color=000000" alt="" />
                             <img src="https://img.icons8.com/?size=100&id=MSWiZ5qvGzVg&format=png&color=000000" alt="" />
                             <img src="https://img.icons8.com/?size=100&id=MSWiZ5qvGzVg&format=png&color=000000" alt="" />
-                        </div>
+                            <img src="https://img.icons8.com/?size=100&id=MSWiZ5qvGzVg&format=png&color=000000" alt="" />
+                        </ScrollEffect>
                     </section>
 
                     <section id="section4" className="section4">
@@ -193,10 +201,10 @@ function Hero() {
                         <div className='getStartedContainer'>
                             <ScrollEffect>
                                 <div className='getStartedContent'>
-                                    <h3>Not sure which industry suits you best?</h3>
+                                    <h3>Not sure which subject stream suits you best?</h3>
                                     <div>
                                         <p>Take our career industry test to find the perfect match!</p>
-                                        <button type="button">Lets go</button></div>
+                                        <button type="button" onClick={handleNext1}>Dive In!</button></div>
                                 </div>
                             </ScrollEffect>
                             <ScrollEffect>
@@ -204,7 +212,7 @@ function Hero() {
                                     <h3>Already know your ideal industry?</h3>
                                     <div>
                                         <p>Select your career path to start exploring your options!</p>
-                                        <button type="button" onClick={handleNext}>Lets go</button></div>
+                                        <button type="button" onClick={handleNext}>Start the Journey!</button></div>
                                 </div>
                             </ScrollEffect>
                         </div>
@@ -322,6 +330,7 @@ function Hero() {
                     </section>
                     <Footer />
                 </>)}
+            <BackToTop />
         </div>
     );
 }

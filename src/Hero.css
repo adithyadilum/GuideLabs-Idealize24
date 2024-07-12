@@ -61,7 +61,6 @@ body {
 .container.bg-change .section7 {
     opacity: 0;
     pointer-events: none;
-    /* Prevent interactions with hidden sections */
     transition: opacity 0.5s ease;
 }
 
@@ -101,8 +100,8 @@ body {
     width: 40%;
     height: 40px;
     padding: 0 30px 0 0;
-    background: rgba(255, 255, 255, 0.719);
-    border-radius: 15px 0px 0 15px;
+    background: rgba(255, 255, 255, 0.89);
+    border-radius: 25px 0px 0 25px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -149,6 +148,7 @@ body {
     flex-direction: row;
     height: 100vh;
     background: url('../src/assets/Sea\ of\ Clouds.svg') no-repeat center center/cover;
+    background-position: bottom;
 }
 
 .heroWrapper {
@@ -384,7 +384,7 @@ iframe {
 }
 
 .section3 {
-    width: 100%;
+    width: 100vw;
     height: 200px;
     display: flex;
     align-items: center;
@@ -423,7 +423,7 @@ iframe {
 
 .section4 div .section4Container {
     width: 100%;
-    height: 400px;
+    height: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
